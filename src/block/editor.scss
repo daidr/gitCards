@@ -1,7 +1,7 @@
 .wp-block-gitcards-gitcards-block {
     margin: 0 auto;
     max-width: 800px;
-    padding: 2rem !important;
+    padding: 0.5rem 2rem 2rem 2rem !important;
     border-radius: $borderRadius-Size;
     transition: all 0.1s ease-in-out;
     h3 {
@@ -35,7 +35,8 @@
     &[data-gitsite="3"] {
         background: $tgrass;
         color: $warmwhite;
-        box-shadow: 0 3px 5px -1px rgba($tgrass, 0.2), 0 6px 10px 0 rgba($tgrass, 0.14), 0 1px 18px 0 rgba($tgrass, 0.12);
+        box-shadow: 0 3px 5px -1px rgba($tgrass, 0.2), 0 6px 10px 0 rgba($tgrass, 0.14),
+            0 1px 18px 0 rgba($tgrass, 0.12);
         &:hover {
             box-shadow: 0 5px 5px -3px rgba($tgrass, 0.2), 0 8px 10px 1px rgba($tgrass, 0.14),
                 0 3px 14px 2px rgba($tgrass, 0.12);
@@ -47,7 +48,8 @@
     &[data-gitsite="4"] {
         background: $purple;
         color: $warmwhite;
-        box-shadow: 0 3px 5px -1px rgba($purple, 0.2), 0 6px 10px 0 rgba($purple, 0.14), 0 1px 18px 0 rgba($purple, 0.12);
+        box-shadow: 0 3px 5px -1px rgba($purple, 0.2), 0 6px 10px 0 rgba($purple, 0.14),
+            0 1px 18px 0 rgba($purple, 0.12);
         &:hover {
             box-shadow: 0 5px 5px -3px rgba($purple, 0.2), 0 8px 10px 1px rgba($purple, 0.14),
                 0 3px 14px 2px rgba($purple, 0.12);

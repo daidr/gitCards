@@ -75,6 +75,7 @@
 }
 
 @mixin cardStyle($color, $bgcolor, $tagname, $tagbgcolor, $tagIcon) {
+    min-height: 120px;
     margin: 0 auto;
     max-width: 800px;
     padding: 10px 25px;
@@ -82,6 +83,7 @@
     border-radius: $borderRadius-Size;
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New",
         STHeiti Light, sans-serif !important;
+    font-weight: 500 !important;
     transition: all 0.1s ease-in-out;
     position: relative;
     margin: 20px 0;

@@ -4,7 +4,7 @@
     })
 
 
-function reloadGitCards() {
+window.reloadGitCards = function () {
     if ("IntersectionObserver" in window) {
         let gitCardObserver = new IntersectionObserver(function (entries, observer) {
             entries.forEach(function (entry) {

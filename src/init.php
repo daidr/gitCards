@@ -14,7 +14,7 @@ function gitcards_cgb_block_assets()
 
     // Styles.
     wp_enqueue_style('gitcards-cgb-style-css', GITCARDS_URL . '/dist/blocks.style.build.css', array('wp-editor'));
-    wp_enqueue_style('font-awesome-icon-css', 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css', array());
+    wp_enqueue_style('font-awesome-icon-css', 'https://libs.cdnjs.net/font-awesome/4.7.0/css/font-awesome.min.css', array());
 }
 
 function gitcards_cgb_editor_assets()
