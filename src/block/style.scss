@@ -1,0 +1,196 @@
+@mixin linkStyle($fontsize, $color, $hovercolor) {
+    font-size: $fontsize;
+    display: inline;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: none;
+    color: $color;
+    &:hover {
+        color: $hovercolor;
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 2px 0 $hovercolor;
+    }
+}
+
+@mixin loadingStyle($color) {
+    .gitspinner {
+        margin: 20px auto;
+        width: 45px;
+        height: 60px;
+        div {
+            height: 100%;
+            width: 6px;
+            display: inline-block;
+            background-color: $color;
+            -webkit-animation: gitloading 1.2s infinite ease-in-out;
+            animation: gitloading 1.2s infinite ease-in-out;
+        }
+        .gitrect1,
+        .gitrect2,
+        .gitrect3,
+        .gitrect4,
+        .gitrect5 {
+            margin-right: 3px;
+            border-radius: 100px;
+        }
+        .gitrect2 {
+            -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+        }
+        .gitrect3 {
+            -webkit-animation-delay: -1s;
+            animation-delay: -1s;
+        }
+        .gitrect4 {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+        .gitrect5 {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+        @-webkit-keyframes gitloading {
+            0%,
+            40%,
+            100% {
+                -webkit-transform: scaleY(0.4);
+            }
+            20% {
+                -webkit-transform: scaleY(1);
+            }
+        }
+
+        @keyframes gitloading {
+            0%,
+            40%,
+            100% {
+                transform: scaleY(0.4);
+                -webkit-transform: scaleY(0.4);
+            }
+            20% {
+                transform: scaleY(1);
+                -webkit-transform: scaleY(1);
+            }
+        }
+    }
+}
+
+@mixin cardStyle($color, $bgcolor, $tagname, $tagbgcolor, $tagIcon) {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px 25px;
+    border-radius: 3px;
+    border-radius: $borderRadius-Size;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New",
+        STHeiti Light, sans-serif !important;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+    margin: 20px 0;
+    background: $bgcolor;
+    color: $color;
+    box-shadow: 0 3px 5px -1px rgba($bgcolor, 0.2), 0 6px 10px 0 rgba($bgcolor, 0.14), 0 1px 18px 0 rgba($bgcolor, 0.12);
+    &:hover {
+        box-shadow: 0 5px 5px -3px rgba($bgcolor, 0.2), 0 8px 10px 1px rgba($bgcolor, 0.14),
+            0 3px 14px 2px rgba($bgcolor, 0.12);
+    }
+    .gitcard-body {
+        width: 100%;
+        height: 100%;
+        color: $color;
+        @include loadingStyle(rgba($color, 0.6));
+        &:before {
+            content: $tagname;
+            background: $tagbgcolor url($tagIcon) 2px 2px / 19px no-repeat;
+            color: rgba($color, 0.6);
+            font-size: 12px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 3px 5px 3px 23px;
+            border-radius: 0 $borderRadius-Size;
+        }
+        .bigtext {
+            color: $color;
+            text-align: center;
+            padding: 20px;
+            opacity: 0.6;
+            margin: 0;
+        }
+
+        a.ownername {
+            @include linkStyle(26px, rgba($color, 0.5), rgba($color, 0.6));
+        }
+        a.reponame {
+            @include linkStyle(26px, rgba($color, 0.8), rgba($color, 0.9));
+        }
+        .desc {
+            font-size: 17px;
+            padding: 0;
+            margin: 6px 0;
+            display: block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: rgba($color, 0.9);
+            a {
+                margin-left: 6px;
+                @include linkStyle(17px, rgba($color, 0.7), rgba($color, 0.8));
+            }
+        }
+        .gitdata {
+            git-stars,
+            git-forks {
+                font-size: 15px;
+                color: rgba($color, 0.7);
+                margin: 0 5px;
+                &:before {
+                    font: normal normal normal 14px/1 FontAwesome !important;
+                    margin-right: 2px;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
+            }
+            git-stars {
+                &:before {
+                    content: "\f005";
+                }
+            }
+            git-forks {
+                &:before {
+                    content: "\f126";
+                }
+            }
+            .viewmore {
+                font: normal normal normal 15px/1 FontAwesome !important;
+                text-decoration: none;
+                color: rgba($color, 0.7);
+                box-shadow: none;
+                margin-right: 2px;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                float: right;
+                position: absolute;
+                right: 14px;
+                bottom: 14px;
+                &:hover {
+                    color: rgba($color, 0.9);
+                }
+            }
+        }
+    }
+}
+
+.wp-block-gitcards-gitcards-block {
+    &[data-gitsite="1"] {
+        @include cardStyle($white, $darkgrey, "GitHub", $grey, $gitHubIcon);
+    }
+    &[data-gitsite="2"] {
+        @include cardStyle($areca, $milk, "Coding", $darkmilk, $codingIcon);
+    }
+    &[data-gitsite="3"] {
+        @include cardStyle($warmwhite, $tgrass, "Gitee", $darktgrass, $giteeIcon);
+    }
+    &[data-gitsite="4"] {
+        @include cardStyle($warmwhite, $purple, "GitLab", $darkpurple, $gitlabIcon);
+    }
+}

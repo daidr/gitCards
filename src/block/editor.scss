@@ -1,0 +1,59 @@
+.wp-block-gitcards-gitcards-block {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2rem !important;
+    border-radius: $borderRadius-Size;
+    transition: all 0.1s ease-in-out;
+    h3 {
+        text-align: center;
+    }
+    &[data-gitsite="1"] {
+        background: $darkgrey;
+        color: $white;
+        box-shadow: 0 3px 5px -1px rgba($darkgrey, 0.2), 0 6px 10px 0 rgba($darkgrey, 0.14),
+            0 1px 18px 0 rgba($darkgrey, 0.12);
+        &:hover {
+            box-shadow: 0 5px 5px -3px rgba($darkgrey, 0.2), 0 8px 10px 1px rgba($darkgrey, 0.14),
+                0 3px 14px 2px rgba($darkgrey, 0.12);
+        }
+        h3 {
+            color: $white;
+        }
+    }
+    &[data-gitsite="2"] {
+        background: $milk;
+        color: $areca;
+        box-shadow: 0 3px 5px -1px rgba($milk, 0.2), 0 6px 10px 0 rgba($milk, 0.14), 0 1px 18px 0 rgba($milk, 0.12);
+        &:hover {
+            box-shadow: 0 5px 5px -3px rgba($milk, 0.2), 0 8px 10px 1px rgba($milk, 0.14),
+                0 3px 14px 2px rgba($milk, 0.12);
+        }
+        h3 {
+            color: $areca;
+        }
+    }
+    &[data-gitsite="3"] {
+        background: $tgrass;
+        color: $warmwhite;
+        box-shadow: 0 3px 5px -1px rgba($tgrass, 0.2), 0 6px 10px 0 rgba($tgrass, 0.14), 0 1px 18px 0 rgba($tgrass, 0.12);
+        &:hover {
+            box-shadow: 0 5px 5px -3px rgba($tgrass, 0.2), 0 8px 10px 1px rgba($tgrass, 0.14),
+                0 3px 14px 2px rgba($tgrass, 0.12);
+        }
+        h3 {
+            color: $warmwhite;
+        }
+    }
+    &[data-gitsite="4"] {
+        background: $purple;
+        color: $warmwhite;
+        box-shadow: 0 3px 5px -1px rgba($purple, 0.2), 0 6px 10px 0 rgba($purple, 0.14), 0 1px 18px 0 rgba($purple, 0.12);
+        &:hover {
+            box-shadow: 0 5px 5px -3px rgba($purple, 0.2), 0 8px 10px 1px rgba($purple, 0.14),
+                0 3px 14px 2px rgba($purple, 0.12);
+        }
+        h3 {
+            color: $warmwhite;
+        }
+    }
+}
